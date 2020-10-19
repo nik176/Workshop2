@@ -29,7 +29,7 @@
    - name: Add the template file
      become: yes
      template:
-       src: templates/nginx.conf
+       src: temps/nginx.conf
        dest: /etc/nginx/sites-available/default
    - name: Enable the configuration file
      become: yes
@@ -57,7 +57,7 @@
       state: present
    - name: Update HAProxy file
      template:
-      src: templates/haproxy.cfg.j2
+      src: temps/haproxy.cfg.j2
       dest: /etc/haproxy/haproxy.cfg
    - name: Restart HAProxy
      service:

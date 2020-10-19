@@ -44,7 +44,7 @@ frontend open_connections
 
 backend Nik
     mode http
-    balance roundrobbin
+    balance roundrobin
 {% for servers in groups['webservers'] %}
     server {{ hostvars[servers]['inventory_hostname'] }} {{ hostvars[servers]['ansible_default_ipv4']['address'] }}:80 check 
 {% endfor %}
